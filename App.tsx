@@ -7,12 +7,17 @@ import {
 } from 'react-native';
 
 function App(): React.JSX.Element {
+  const onJustifyTextLayout = (
+    event: NativeSyntheticEvent<TextLayoutEventData>,
+  ) =>
+    console.log('Number of lines (Justify): ', event.nativeEvent.lines.length);
+
   const onTextLayout = (event: NativeSyntheticEvent<TextLayoutEventData>) =>
     console.log('Number of lines: ', event.nativeEvent.lines.length);
 
   return (
     <SafeAreaView>
-      <Text onTextLayout={onTextLayout} style={styles.textJustify}>
+      <Text onTextLayout={onJustifyTextLayout} style={styles.textJustify}>
         asdasd dajdoij sdnk aosjn dojna s dnjasjdkn dnsjdnjnkdaajs sjdnjn sdjn
         jdns ssjkndjkansd s s s s s s s njnd sjkdnajdn sndjand sdjnaojdnsjdnsnd
         jsdn sdn a s kk sdnjsjdn jsnd sjdn dddd ajksnd jad nd a d sakjnd skjnd
